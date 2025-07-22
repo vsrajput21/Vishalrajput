@@ -1,0 +1,82 @@
+/* Google Form Styling */
+.google-form-container {
+    position: relative;
+    width: 100%;
+    height: 800px; /* Increased height to avoid scrolling */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    margin: 2rem 0;
+    background: linear-gradient(145deg, var(--white-color) 0%, var(--light-color) 100%);
+    border-left: 8px solid var(--primary-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: formFadeIn 0.8s ease-in-out;
+    /* Add a subtle gradient overlay to match website theme */
+    position: relative;
+}
+
+.google-form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.google-form-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transform: scale(1.02); /* Slightly scale up to ensure full visibility */
+    transform-origin: 0 0;
+    transition: all 0.3s ease;
+}
+
+/* Custom scrollbar for the form */
+.google-form-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.google-form-container::-webkit-scrollbar-track {
+    background: var(--light-color);
+    border-radius: 10px;
+}
+
+.google-form-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.google-form-container::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Animation for form appearance */
+@keyframes formFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .google-form-container {
+        height: 600px;
+    }
+    
+    .google-form-container iframe {
+        transform: scale(0.95);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .google-form-container {
+        height: 500px;
+    }
+    
+    .google-form-container iframe {
+        transform: scale(0.9);
+    }
+}
